@@ -37,7 +37,7 @@ async function getFullJobDetail(scrapedData) {
             uid: SECOND_TASK.GO_STEP_ID,
             action: 'go',
             config: {
-              url: `https://playground.browserbear.com${job.link}`,
+              url: `https://playground.roborabbit.com${job.link}`,
             },
           },
         ],
@@ -76,7 +76,7 @@ async function triggerRun(taskId, saveStructuredDataId, body) {
 }
 
 async function runTask(taskId, body) {
-  const res = await fetch(`https://api.browserbear.com/v1/tasks/${taskId}/runs`, {
+  const res = await fetch(`https://api.roborabbit.com/v1/tasks/${taskId}/runs`, {
     method: 'POST',
     body: body,
     headers: {
@@ -89,7 +89,7 @@ async function runTask(taskId, body) {
 }
 
 async function getRun(taskId, runId) {
-  const res = await fetch(`https://api.browserbear.com/v1/tasks/${taskId}/runs/${runId}`, {
+  const res = await fetch(`https://api.roborabbit.com/v1/tasks/${taskId}/runs/${runId}`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${API_KEY}`,
